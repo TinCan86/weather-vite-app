@@ -57,7 +57,7 @@ const Card: FunctionComponent<Props> = ({ title, text, number }) => {
       right: 10px;
       font-size: 8em;
       color: rgba(255, 255, 255, 0.05);
-      pointer-event: none;
+      pointer-events: none;
     }
 
     h3 {
