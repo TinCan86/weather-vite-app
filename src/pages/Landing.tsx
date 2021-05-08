@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from "react";
 import Container from "../components/Container";
 import Card from "../components/Card";
+import Title from "../components/Title";
 
 import { useWeatherData } from "../hooks/useWeatherData";
 import * as Utils from "../utils/helpers";
@@ -23,28 +24,32 @@ const LandingView: FunctionComponent = () => {
   if (error != null) return <p>error: {error}</p>;
 
   return (
-    <Container>
-      <Card
-        title="Lowest Temperature"
-        number={lowestTemp}
-        text="This is the lowest temperature forecast for the next 4 days"
-      />
-      <Card
-        title="Highest Temperature"
-        number={highestTemp}
-        text="This is the highest temperature forecast for the next 4 days"
-      />
-      <Card
-        title="Median Temperature"
-        number={median}
-        text="This is the median temperature forecast for the next 4 days"
-      />
-      <Card
-        title="Average Temperature"
-        number={average}
-        text="This is the average temperature forecast for the next 4 days"
-      />
-    </Container>
+    <React.Fragment>
+      <Title>Weather in Gothenburg</Title>
+
+      <Container>
+        <Card
+          title="Lowest Temperature"
+          number={lowestTemp}
+          text="This is the lowest temperature forecast for the next 4 days"
+        />
+        <Card
+          title="Highest Temperature"
+          number={highestTemp}
+          text="This is the highest temperature forecast for the next 4 days"
+        />
+        <Card
+          title="Median Temperature"
+          number={median}
+          text="This is the median temperature forecast for the next 4 days"
+        />
+        <Card
+          title="Average Temperature"
+          number={average}
+          text="This is the average temperature forecast for the next 4 days"
+        />
+      </Container>
+    </React.Fragment>
   );
 };
 
