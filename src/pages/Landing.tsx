@@ -6,12 +6,12 @@ import { useWeatherData } from "../hooks/useWeatherData";
 import * as Utils from "../utils/helpers";
 
 // Defines the type
-import * as Model from "../models/index";
+import { t } from "../models/index";
 
 const LandingView: FunctionComponent = () => {
   const { data, error } = useWeatherData();
 
-  const result: number[] = data?.list?.map((a: any) => a.main.temp);
+  const result: number[] = data?.list?.map((a: t) => a.main.temp);
 
   const highestTemp = Utils.calcHighestTemp(result);
   const lowestTemp = Utils.calcLowestTemp(result);
@@ -27,22 +27,22 @@ const LandingView: FunctionComponent = () => {
       <Card
         title="Lowest Temperature"
         number={lowestTemp}
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        text="This is the lowest temperature forecast for the next 4 days"
       />
       <Card
         title="Highest Temperature"
         number={highestTemp}
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        text="This is the highest temperature forecast for the next 4 days"
       />
       <Card
         title="Median Temperature"
         number={median}
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        text="This is the median temperature forecast for the next 4 days"
       />
       <Card
         title="Average Temperature"
         number={average}
-        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        text="This is the average temperature forecast for the next 4 days"
       />
     </Container>
   );

@@ -1,17 +1,20 @@
 /** @jsx jsx */
-import React, { FunctionComponent } from "react";
+import { FunctionComponent } from "react";
 import { css, jsx } from "@emotion/react";
 
 type Props = {};
 
 const Container: FunctionComponent<Props> = ({ children }) => {
   const style = css`
-    display: flex;
+    display: block;
     flex: wrap;
     height: 90vh;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+
+    @media screen and (min-width: 1367px) {
+      display: flex;
+    }
   `;
 
   return <div css={style}>{children}</div>;

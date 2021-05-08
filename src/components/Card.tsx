@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React, { FunctionComponent } from "react";
 import { css, jsx } from "@emotion/react";
-import sun from "../sun.svg";
 
 type Props = {
   title: string;

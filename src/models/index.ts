@@ -2,10 +2,7 @@ export interface t {
   main: { temp: number };
 }
 
-export interface d {
-  list: [{ main: { temp: number } }];
-}
-
+// Not finished type
 export interface data {
   data: {
     city: {
