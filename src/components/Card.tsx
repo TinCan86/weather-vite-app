@@ -22,7 +22,7 @@ const Card: FunctionComponent<Props> = ({ title, text, number }) => {
     .card {
       position: relative;
       width: 280px;
-      height: 400px;
+      height: 380px;
       margin: 30px;
       box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
       border-radius: 15px;
@@ -66,23 +66,18 @@ const Card: FunctionComponent<Props> = ({ title, text, number }) => {
       z-index: 1;
     }
 
+    h4 {
+      margin-bottom: 30px;
+      margin-top: 30px;
+      font-size: 2.5em;
+      color: #fff;
+      z-index: 1;
+    }
+
     p {
       font-size: 1em;
       color: #fff;
       font-width: 300;
-    }
-
-    a {
-      position: relative;
-      display: inline-block;
-      padding: 8px 20px;
-      margin-top: 15px;
-      background: #fff;
-      color: black;
-      border-radius: 20px;
-      text-decoration: none;
-      font-weight: 500;
-      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     }
   `;
 
@@ -92,8 +87,8 @@ const Card: FunctionComponent<Props> = ({ title, text, number }) => {
         <div className="content">
           <h2>{number ? number : "Null"}&#8451;</h2>
           <h3>{title}</h3>
+          <h4>{number ? number : "Null"}&#8451;</h4>
           <p>{text}</p>
-          <a href="#">Read more</a>
         </div>
       </div>
     </div>
