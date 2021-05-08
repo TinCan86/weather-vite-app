@@ -17,6 +17,12 @@ const Card: FunctionComponent<Props> = ({ title, text, number }) => {
     max-width: 1200px;
     flex-wrap: wrap;
     z-index: 1;
+    transition: 0.2s;
+
+    &:hover {
+      transition: 0.2s;
+      transform: scale(1.2);
+    }
 
     .card {
       position: relative;
@@ -33,21 +39,11 @@ const Card: FunctionComponent<Props> = ({ title, text, number }) => {
       border-top: 1px solid rgba(255, 255, 255, 0.5);
       border-left: 1px solid rgba(255, 255, 255, 0.5);
       backdrop-filter: blue(5px);
-
-      &:hover {
-        .content {
-          transform: translateY(0px);
-          opacity: 1;
-        }
-      }
     }
 
     .content {
       padding: 20px;
       tex-align: center;
-      transform: translateY(100px);
-      opacity: 0;
-      transition: 0.5s;
     }
 
     h2 {
