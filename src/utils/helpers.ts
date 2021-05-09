@@ -1,4 +1,4 @@
-export const calcAverageTemp = (list: number[]) => {
+export const calcAverageTemp = (list: Array<number>) => {
   try {
     const summary = list.reduce((a, b) => a + b, 0);
 
@@ -6,40 +6,55 @@ export const calcAverageTemp = (list: number[]) => {
 
     return Math.round(average).toString();
   } catch (error) {
-    console.log(error, "Something went wrong");
+    console.error(error, "Something went wrong");
     return null;
   }
 };
 
-export const calcMedianTemp = (list: number[]) => {
+export const calcMedianTemp = (list: Array<number>): string | null => {
   try {
-    // change place on a - b for desc
-    const sorted = list.sort((a, b) => a - b); // ascending
+    if (list.length >= 1) {
+      // Sorting order ascending
+      list = list.sort((a: number, b: number) => a - b);
 
-    const twoMedianValues = sorted[19] + sorted[20];
-    const median = twoMedianValues / 2;
+      // Checking with modulus if list is even
+      if (list.length % 2 === 0) {
+        // Checking middle value and middle value minus 1 in index and give it only 2 decimal places
+        const result = (
+          (list[list.length / 2 - 1] + list[list.length / 2]) /
+          2
+        ).toFixed(2);
 
-    return Math.round(median).toString();
+        return result.toString();
+      } else {
+        const result = list[(list.length - 1) / 2].toFixed(2);
+
+        return result.toString();
+      }
+    } else {
+      console.log("Empty list, nothing to count on");
+      return null;
+    }
   } catch (error) {
-    console.log(error, "Something went wrong");
+    console.error(error, "Something went wrong");
     return null;
   }
 };
 
-export const calcHighestTemp = (list: number[]) => {
+export const calcHighestTemp = (list: Array<number>) => {
   try {
     return Math.round(Math.max(...list)).toString();
   } catch (error) {
-    console.log(error, "Something went wrong");
+    console.error(error, "Something went wrong");
     return null;
   }
 };
 
-export const calcLowestTemp = (list: number[]) => {
+export const calcLowestTemp = (list: Array<number>) => {
   try {
     return Math.round(Math.min(...list)).toString();
   } catch (error) {
-    console.log(error, "Something went wrong");
+    console.error(error, "Something went wrong");
     return null;
   }
 };

@@ -12,7 +12,7 @@ import { t } from "../models/index";
 const LandingView: FunctionComponent = () => {
   const { data, error } = useWeatherData();
 
-  const result: number[] = data?.list?.map((a: t) => a.main.temp);
+  const result: Array<number> = data?.list?.map((a: t) => a.main.temp);
 
   const highestTemp = Utils.calcHighestTemp(result);
   const lowestTemp = Utils.calcLowestTemp(result);

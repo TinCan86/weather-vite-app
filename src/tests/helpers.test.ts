@@ -35,7 +35,7 @@ test("medianTemp", async () => {
   const result = Utils.calcMedianTemp(testList);
 
   if (result != null) {
-    expect(parseInt(result)).toBe(21);
+    expect(parseInt(result)).toBe(20);
   } else {
     expect(result).toBe(null);
   }
