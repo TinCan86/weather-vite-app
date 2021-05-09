@@ -14,14 +14,14 @@ const LandingView: FunctionComponent = () => {
 
   const result: Array<number> = data?.list?.map((a: t) => a.main.temp);
 
+  if (!data) return <p>Loading</p>;
+
+  if (error != null) return <p>error: {error}</p>;
+
   const highestTemp = Utils.calcHighestTemp(result);
   const lowestTemp = Utils.calcLowestTemp(result);
   const median = Utils.calcMedianTemp(result);
   const average = Utils.calcAverageTemp(result);
-
-  if (!data) return <p>Loading</p>;
-
-  if (error != null) return <p>error: {error}</p>;
 
   return (
     <React.Fragment>
