@@ -1,8 +1,8 @@
-# Roberts weather application
+# Weather application
 
 ## Description
 
-This is a weather webapplication with data from openweathermap. Its an SSR with real-time editing in development environment. Try it, its fast ;)
+This is a weather webapplication with data from openweathermap. Its an SSR with real-time editing in development environment.
 
 ## Getting started
 
